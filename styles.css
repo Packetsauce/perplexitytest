@@ -1,13 +1,13 @@
 :root {
     --background-color: #ffffff;
     --text-color: #333333;
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --accent-color: #28a745;
+    --primary-color: #001F3F;
+    --secondary-color: #7FDBFF;
+    --accent-color: #39CCCC;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -15,75 +15,58 @@ body {
 }
 
 body.dark-mode {
-    --background-color: #1a1a1a;
+    --background-color: #001F3F;
     --text-color: #ffffff;
-    --primary-color: #4da3ff;
-    --secondary-color: #a1a1a1;
-    --accent-color: #5cb85c;
+    --primary-color: #7FDBFF;
+    --secondary-color: #39CCCC;
+    --accent-color: #01FF70;
 }
 
 header {
     background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 1rem 0;
+    padding: 1rem;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
 nav ul {
     display: flex;
+    justify-content: space-around;
     list-style-type: none;
 }
 
-nav ul li {
-    margin-left: 1.5rem;
-}
-
 nav ul li a {
-    color: #ffffff;
+    color: var(--background-color);
     text-decoration: none;
-    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
 }
 
-nav ul li a:hover {
-    color: var(--accent-color);
+nav ul li a:hover, nav ul li a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 main {
-    margin-top: 60px;
-    padding: 2rem;
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 0 20px;
 }
 
 section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 0;
+    margin-bottom: 4rem;
 }
 
-h1, h2 {
-    margin-bottom: 1rem;
+h1, h2, h3 {
+    color: var(--primary-color);
 }
 
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color);
-    color: #ffffff;
+    color: var(--background-color);
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 5px;
@@ -91,21 +74,19 @@ h1, h2 {
 }
 
 .cta-button:hover {
-    background-color: #218838;
+    background-color: var(--secondary-color);
 }
 
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
 }
 
 .course-card {
     background-color: var(--secondary-color);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
@@ -119,94 +100,62 @@ h1, h2 {
     object-fit: cover;
 }
 
-.course-card h3, .course-card p {
-    padding: 1rem;
-}
-
 form {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    margin: 0 auto;
 }
 
 input, textarea, button {
-    margin: 0.5rem 0;
-    padding: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
     border: 1px solid var(--secondary-color);
     border-radius: 5px;
 }
 
 button {
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: var(--background-color);
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
-}
-
-footer {
     background-color: var(--secondary-color);
-    color: #ffffff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
 }
 
-.modal {
-    display: none;
+.chatbot-container {
     position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 20px;
+    right: 20px;
 }
 
-.modal-content {
-    background-color: var(--background-color);
-    margin: 15% auto;
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 400px;
-    position: relative;
-}
-
-.close {
-    color: var(--text-color);
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+#chatbotToggle {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.setting-option {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
+#chatbotToggle:hover {
+    background-color: var(--secondary-color);
+}
+
+.chatbot-content {
+    display: none;
+    /* Add styles for chatbot interface */
 }
 
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-color);
-        display: none;
     }
-
-    nav ul.show {
-        display: flex;
-    }
-
+    
     nav ul li {
-        margin: 1rem 0;
+        margin-bottom: 0.5rem;
     }
 }
