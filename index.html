@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechNova Academy</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">TechNova Academy</div>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#" id="loginBtn">Login</a></li>
-                <li><a href="#" id="settingsBtn">Settings</a></li>
+                <li><button id="loginBtn">Login</button></li>
+                <li><button id="darkModeToggle" aria-label="Toggle dark mode">
+                    <span class="toggle-track">
+                        <span class="toggle-indicator"></span>
+                    </span>
+                </button></li>
             </ul>
         </nav>
     </header>
@@ -33,35 +36,30 @@
             <h2>Our Courses</h2>
             <div class="course-grid">
                 <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kaW5nfGVufDB8fDB8fHww" alt="Web Development">
+                    <img src="path/to/web-dev-image.jpg" alt="Web Development Course">
                     <h3>Web Development</h3>
-                    <p>Master the art of creating stunning websites</p>
+                    <p>Master modern web technologies</p>
+                    <a href="#" class="course-link">Learn More</a>
                 </div>
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGF0YSUyMHNjaWVuY2V8ZW58MHx8MHx8fDA%3D" alt="Data Science">
-                    <h3>Data Science</h3>
-                    <p>Unlock insights from complex datasets</p>
-                </div>
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGN5YmVyc2VjdXJpdHl8ZW58MHx8MHx8fDA%3D" alt="Cybersecurity">
-                    <h3>Cybersecurity</h3>
-                    <p>Protect digital assets from cyber threats</p>
-                </div>
+                <!-- Add more course cards as needed -->
             </div>
         </section>
 
         <section id="about">
             <h2>About TechNova Academy</h2>
-            <p>TechNova Academy is dedicated to providing cutting-edge IT education to aspiring tech professionals. Our expert instructors and hands-on approach ensure that students are well-prepared for the ever-evolving tech industry.</p>
+            <p>We provide cutting-edge IT education to aspiring tech professionals.</p>
+            <div class="infographic">
+                <!-- Add an infographic or image here -->
+            </div>
         </section>
 
         <section id="contact">
             <h2>Contact Us</h2>
             <form id="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit">Send</button>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
             </form>
         </section>
     </main>
@@ -70,26 +68,12 @@
         <p>&copy; 2024 TechNova Academy. All rights reserved.</p>
     </footer>
 
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Login</h2>
-            <form id="login-form">
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="settingsModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Settings</h2>
-            <div class="setting-option">
-                <label for="themeToggle">Dark Mode</label>
-                <input type="checkbox" id="themeToggle">
-            </div>
+    <div id="chatbot" class="chatbot-container">
+        <button id="chatbotToggle" aria-label="Toggle chatbot">
+            <span class="chatbot-icon">💬</span>
+        </button>
+        <div id="chatbotContent" class="chatbot-content">
+            <!-- Chatbot interface would go here -->
         </div>
     </div>
 
