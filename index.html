@@ -3,98 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced IT Project Showcase</title>
+    <title>TechNova Academy</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <nav>
+            <div class="logo">TechNova Academy</div>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#courses">Courses</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="loginBtn">Login</a></li>
+                <li><a href="#" id="settingsBtn">Settings</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="home">
-            <h1>Welcome to My Advanced IT Project</h1>
-            <p>Showcasing cutting-edge web design and development techniques</p>
+            <h1>Welcome to TechNova Academy</h1>
+            <p>Empowering the next generation of tech innovators</p>
+            <a href="#courses" class="cta-button">Explore Courses</a>
         </section>
 
-        <section id="features">
-            <h2>Features</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>Responsive Design</h3>
-                    <p>Adapts seamlessly to all screen sizes</p>
+        <section id="courses">
+            <h2>Our Courses</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kaW5nfGVufDB8fDB8fHww" alt="Web Development">
+                    <h3>Web Development</h3>
+                    <p>Master the art of creating stunning websites</p>
                 </div>
-                <div class="feature-item">
-                    <h3>Intuitive Navigation</h3>
-                    <p>Easy-to-use menu with smooth scrolling</p>
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGF0YSUyMHNjaWVuY2V8ZW58MHx8MHx8fDA%3D" alt="Data Science">
+                    <h3>Data Science</h3>
+                    <p>Unlock insights from complex datasets</p>
                 </div>
-                <div class="feature-item">
-                    <h3>Modern Aesthetics</h3>
-                    <p>Clean and visually appealing design</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Interactive Elements</h3>
-                    <p>Engaging user experience with JavaScript</p>
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGN5YmVyc2VjdXJpdHl8ZW58MHx8MHx8fDA%3D" alt="Cybersecurity">
+                    <h3>Cybersecurity</h3>
+                    <p>Protect digital assets from cyber threats</p>
                 </div>
             </div>
         </section>
 
         <section id="about">
-            <h2>About This Project</h2>
-            <p>This advanced project showcases my expertise in web design and development. It demonstrates my ability to create a responsive, user-friendly, and visually striking website using HTML, CSS, and JavaScript, while incorporating modern design trends and interactive elements.</p>
-        </section>
-
-        <section id="projects">
-            <h2>Project Gallery</h2>
-            <div class="image-gallery">
-                <img src="https://via.placeholder.com/300x200.png?text=Project+1" alt="Project 1">
-                <img src="https://via.placeholder.com/300x200.png?text=Project+2" alt="Project 2">
-                <img src="https://via.placeholder.com/300x200.png?text=Project+3" alt="Project 3">
-                <img src="https://via.placeholder.com/300x200.png?text=Project+4" alt="Project 4">
-            </div>
-        </section>
-
-        <section id="faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <h3>What technologies were used in this project?</h3>
-                    <div class="accordion-content">
-                        <p>This project utilizes HTML5, CSS3, JavaScript (ES6+), and Chart.js for data visualization.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h3>Is this website responsive?</h3>
-                    <div class="accordion-content">
-                        <p>Yes, this website is fully responsive and adapts to various screen sizes and devices.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h3>How can I contact the developer?</h3>
-                    <div class="accordion-content">
-                        <p>You can use the contact form at the bottom of the page to get in touch with the developer.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="chart">
-            <h2>IT Trends Chart</h2>
-            <canvas id="trendChart"></canvas>
+            <h2>About TechNova Academy</h2>
+            <p>TechNova Academy is dedicated to providing cutting-edge IT education to aspiring tech professionals. Our expert instructors and hands-on approach ensure that students are well-prepared for the ever-evolving tech industry.</p>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
+            <h2>Contact Us</h2>
             <form id="contact-form">
                 <input type="text" placeholder="Name" required>
                 <input type="email" placeholder="Email" required>
@@ -105,8 +67,31 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Your Name - Advanced IT Project</p>
+        <p>&copy; 2024 TechNova Academy. All rights reserved.</p>
     </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Settings</h2>
+            <div class="setting-option">
+                <label for="themeToggle">Dark Mode</label>
+                <input type="checkbox" id="themeToggle">
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
