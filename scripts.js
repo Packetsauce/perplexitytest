@@ -1,48 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const loginBtn = document.getElementById('loginBtn');
-    const settingsBtn = document.getElementById('settingsBtn');
-    const loginModal = document.getElementById('loginModal');
-    const settingsModal = document.getElementById('settingsModal');
-    const closeBtns = document.getElementsByClassName('close');
-    const themeToggle = document.getElementById('themeToggle');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
 
-    // Login modal
-    loginBtn.onclick = function() {
-        loginModal.style.display = "block";
-    }
+    // Dark mode toggle
+    darkModeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+    });
 
-    // Settings modal
-    settingsBtn.onclick = function() {
-        settingsModal.style.display = "block";
-    }
-
-    // Close modals
-    for (let closeBtn of closeBtns) {
-        closeBtn.onclick = function() {
-            loginModal.style.display = "none";
-            settingsModal.style.display = "none";
-        }
-    }
-
-    // Close modals when clicking outside
-    window.onclick = function(event) {
-        if (event.target == loginModal || event.target == settingsModal) {
-            loginModal.style.display = "none";
-            settingsModal.style.display = "none";
-        }
-    }
-
-    // Theme toggle
-    themeToggle.onchange = function() {
-        document.body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', themeToggle.checked);
-    }
-
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('darkMode');
-    if (savedTheme === 'true') {
-        document.body.classList.add('dark-mode');
-        themeToggle.checked = true;
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        body.classList.add('dark-mode');
     }
 
     // Smooth scrolling for navigation links
@@ -55,20 +23,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submission handling
+    // Chatbot toggle
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotContent = document.getElementById('chatbotContent');
+
+    chatbotToggle.addEventListener('click', function() {
+        chatbotContent.style.display = chatbotContent.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Form submission (you would replace this with actual form handling)
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         alert('Thank you for your message! We will get back to you soon.');
         contactForm.reset();
-    });
-
-    // Login form handling
-    const loginForm = document.getElementById('login-form');
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Login functionality would be implemented here.');
-        loginForm.reset();
-        loginModal.style.display = "none";
     });
 });
